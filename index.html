@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/636a52def2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <link rel="icon" href="/assets/white-logo.png">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>RDZV - Graphics Solution</title>
+</head>
+<body>
+    <header class="sticky" id="navigation-bar">
+        <div class="logo-container">
+            <img width="70" src="assets/white-logo.png" alt="Logo">
+            <h3>RDZV - Graphics Solution</h3>
+        </div>
+        <ul class="button-list">
+            <li id="home-btn">HOME</li>
+            <li id="gallery-btn">GALLERY</li>
+            <li id="services-btn">SERVICES</li>
+            <li id="contact-btn">CONTACT</li>
+        </ul>
+    </header>
+    <section class="section-wrapper">
+
+        <div class="contents" id="home-content">
+            <div class="first-screen">
+                <img src="assets/black-logo.png" alt="Black Company Logo">
+                <div class="first-screen-txt">
+                    <h2>Bringing creativity to life!</h2>
+                    <br>
+                    <h4>Beyond imagination.</h4>
+                    <br>
+                    <h5>Believe in the power of ideas!</h5>
+                </div>
+            </div>
+
+            <div class="second-screen">
+                <div class="second-screen-txt">
+                    <h2>ABOUT US</h2>
+                    <p>RDZV - Graphics Solution is a start-up graphic design and video editing company and provider. <br> <br> We offer services that come in different bundles. These bundles are especially made for our customers. Our enterprise is being run by a partnership type of business. We contribute a certain amount to cover the expenses in starting the enterprise. We are located in the Dolores, City of San Fernando, Pampanga.</p>
+                </div>
+                <img src="assets/white-logo.png" alt="White Company Logo">
+            </div>
+
+            <div class="third-screen">
+                <h1>Below shows the demand of Graphics Design over the years</h1>
+                <p class="xData">X-axis represents the years from 2016-2021</p>
+                <p class="yData">Y-axis represents the of demand of graphics design</p>
+                <canvas class="charts" id="popularityChart" width="400" height="400"></canvas>
+            </div>
+        </div><!--Home content wrapper-->
+        
+        <div class="contents" id="gallery-content">
+            <div class="first-screen" id="design-gallery">
+                <h1>Graphic Designs</h1>
+                <div class="design-gallery-img">
+                    <img class="gallery-img" src="assets/gallery-samples/aespa.png" alt="Aespa Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/babasuk.png" alt="Babasuk Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/izone.jpg" alt="Izone Logo" style="background: black;">
+                    <img class="gallery-img" src="assets/gallery-samples/john-repair.png" alt="Motorcyle Repair Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/aespa.png" alt="Aespa Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/babasuk.png" alt="Babasuk Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/izone.jpg" alt="Izone Logo" style="background: black;">
+                    <img class="gallery-img" src="assets/gallery-samples/john-repair.png" alt="Motorcyle Repair Logo">
+                </div>
+            </div><!--design gallery img div-->
+
+            <div class="second-screen" id="video-gallery">
+                <h1>Video Editing</h1>
+                <div class="videos">
+                    <iframe src="https://www.youtube.com/embed/lYP0lP8pR6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><!--Ang pinaka-->
+                    <iframe src="https://www.youtube.com/embed/gy4rt0-q-wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><!--The heirs video-->
+                    <iframe src="https://www.youtube.com/embed/qfAAt7L6mdk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><!--Short fil: Pressue-->
+                </div>
+            </div><!--video editing gallery div-->
+        </div><!--Gallery content wrapper-->
+
+        <div class="contents" id="services-content">
+            <div class="services-tabs" id="services-tabs">
+                <i class="fas fa-bars" id="hamburger"></i>
+                <div class="tabs" id="tabs">
+                    <h3 id="designTab">Graphic Designs</h3>
+                    <h3 id="videoTab">Video Editing</h3>
+                    <h3 id="customTab">Custom Request</h3>
+                </div>
+            </div>
+            <div class="display-services">
+                <section id="design-section">
+                    <h1>Graphic Designs</h1>
+                    <div class="services-div" id="basic-service">
+                        <img src="assets/service-logos/basic.png" alt="">
+                        <div class="tag-n-price">
+                            <h1>Basic Service</h1>
+                            <h2>PHP 500</h2>
+                            <div class="service-btns-div">
+                                <button class="service-btns" id="basic-offer-button">Show Offer</button>
+                                <button class="service-btns" id="basic-request-button">Request Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-div" id="standard-service">
+                        <img src="assets/service-logos/standard.png" alt="">
+                        <div class="tag-n-price">
+                            <h1>Standard Service</h1>
+                            <h2>PHP 1500</h2>
+                            <div class="service-btns-div">
+                                <button class="service-btns" id="standard-offer-button">Show Offer</button>
+                                <button class="service-btns" id="standard-request-button">Request Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-div" id="premium-service">
+                        <img src="assets/service-logos/premium.png" alt="">
+                        <div class="tag-n-price">
+                            <h1>Premium Service</h1>
+                            <h2>PHP 2000</h2>
+                            <div class="service-btns-div">
+                                <button class="service-btns" id="premium-offer-button">Show Offer</button>
+                                <button class="service-btns" id="premium-request-button">Request Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="video-section">
+                    <h1>Video Editing</h1>
+                    <div class="services-div" id="standard-video-service">
+                        <img src="assets/service-logos/standard.png" alt="">
+                        <div class="tag-n-price">
+                            <h1>Standard Service</h1>
+                            <h2>PHP 1000</h2>
+                            <div class="service-btns-div">
+                                <button class="service-btns" id="standard-offer-video">Show Offer</button>
+                                <button class="service-btns" id="standard-request-video">Request Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-div" id="premium-video-service">
+                        <img src="assets/service-logos/premium.png" alt="">
+                        <div class="tag-n-price">
+                            <h1>Premium Service</h1>
+                            <h2>PHP 2500</h2>
+                            <div class="service-btns-div">
+                                <button class="service-btns" id="premium-offer-video">Show Offer</button>
+                                <button class="service-btns" id="premium-request-video">Request Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+        </div><!--Services content wrapper-->
+
+        <div class="contents" id="contact-content">
+            <div class="contact-form">
+                <label for="toName">Send Email to:</label>
+                <input type="text" name="toName" id="myAccount" value="mrcnbng@gmail.com" readonly>
+                <label for="toName">Enter your Email address:</label>
+                <input type="text" name="fromName" id="userAccount">
+                <label for="toName">Your message:</label>
+                <input type="text" name="message" id="message">
+                <button id="sendMail">Send Email</button>
+            </div>
+        </div><!--Contact content wrapper-->
+    </section><!--whole body wrapper-->
+
+    <div class="modal-bg" id="modal-bg">
+        <div class="modal" id="info-modal">
+            <h3>Fill the questions below</h3>
+            <label for="conceptDesign">Concept design:</label>
+            <input type="text" name="conceptDesign" id="conceptDesign" placeholder="Ex. Dragon, Snake">
+
+            <label for="designName">Design name:</label>
+            <input type="text" name="designName" id="designName" placeholder="Ex. Twitter, Marlboro">
+
+            <label for="emailAddress">Gmail address:</label>
+            <input type="email" name="emailAddress" id="emailAddress" placeholder="Please enter a valid email address.">
+
+            <div class="modal-btns">
+                <button class="next-btn" id="next-btn">Proceed</button>
+                <button class="cancel-btn" id="cancel-btn">Cancel</button>
+            </div>
+        </div>
+        <div class="modal" id="subOffer-modal">
+            <h3>Check out our sub-offers!</h3>
+            <div>
+                <input id="tshirtCheckbox" type="checkbox" name="tshirt">
+                <label for="tshirtCheckbox">T shirt</label>
+                <input id="tshirtNumber" type="number" min="1" max="100" placeholder="1" disabled>
+            </div>
+
+            <div>
+                <input id="cardCheckbox" type="checkbox" name="inviteCard">
+                <label for="cardCheckbox">Invitational Cards</label>
+                <input id="cardNumber" type="number" min="1" max="100" placeholder="1" disabled>
+            </div>
+
+            <div>
+                <input id="stickerCheckbox" type="checkbox" name="sticker">
+                <label for="stickerCheckbox">Stickers</label>
+                <input id="stickerNumber" type="number" min="1" max="200" placeholder="1" disabled>
+            </div>
+            <div class="total-cost-div">
+                <h3 id="total-cost">Your total:</h3>
+                <p id="total-cost-num">0</p>
+            </div>
+
+            <div class="modal-btns">
+                <button class="next-btn" id="finish-btn">Finish</button>
+                <button class="cancel-btn" id="cancel-modal">Cancel</button>
+            </div>
+        </div>
+
+        <div class="modal" id="video-modal">
+            <h3>Fill the questions below</h3>
+            <label for="videoInput">Upload video</label>
+            <button id="uploadVideoButton">Click to upload</button>
+            <input type="file" name="videoInput" id="videoInput" accept="video/mp4,video/x-m4v,video/*">
+            <h4 id="noVid">No video uploaded</h4>
+            <!-- <div class="fileDiv" id="fileDiv">
+                
+            </div> -->
+
+            <label for="videoEmailAddress">Gmail address:</label>
+            <input type="email" name="videoEmailAddress" id="videoEmailAddress" placeholder="Please enter a valid email address.">
+
+            <div class="modal-btns">
+                <button class="video-confirm-btn" id="video-confirm-btn">Finish</button>
+                <button class="video-cancel-btn" id="video-cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="module" src="/scripts/script.js"></script>
+    <script type="module" src="/scripts/modal.js"></script>
+</body>
+</html>

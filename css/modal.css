@@ -1,0 +1,229 @@
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: start;
+    z-index: 1000;
+    display: none;
+}
+
+#modal-bg.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    padding: 2rem;
+    min-width: 30%;
+    background-color: white;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius: 5pt;
+    -webkit-box-shadow: 0 0 7px gainsboro;
+            box-shadow: 0 0 7px gainsboro;
+}
+
+#info-modal.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-modal > h3 {
+    margin-bottom: 2rem;
+}
+
+#info-modal > input, label, button {
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    border: none;
+}
+
+#info-modal > label, button {
+    border-radius: 4px;
+}
+
+#info-modal > input {
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 1rem;
+}
+
+#info-modal > input:focus {
+    border-bottom: 2px solid green;
+}
+
+.modal-btns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.modal-btns > button {
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s all ease;
+}
+
+.next-btn {
+    background: rgb(160, 209, 255); 
+}
+
+.next-btn:hover {
+    background: rgb(84, 172, 255);
+}
+
+.cancel-btn {
+    background: rgb(255, 159, 176);
+}
+
+.cancel-btn:hover {
+    background: rgb(255, 114, 140);
+}
+
+#subOffer-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90%;
+    /* align-items: center; */
+}
+
+#subOffer-modal > h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#subOffer-modal > div {
+    margin: .5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#subOffer-modal > div > input[type=checkbox], label{
+    padding: .5rem;
+    margin: .5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+#subOffer-modal > div > input[type=number] {
+    width: 20%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+#subOffer-modal > div > label {
+    font-size: 1.3rem;
+}
+
+#subOffer-modal > button {
+    align-self: center;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .2s all ease;
+    width: 90%;
+}
+
+#subOffer-modal > button:hover {
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#subOffer-modal > .total-cost-div {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    color: green;
+    border-top: 1px solid black;
+}
+
+.total-cost-div > h3 {
+    flex: 1;
+}
+
+/*video modal styling*/
+
+#video-modal.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-modal > h3 {
+    margin-bottom: 2rem;
+}
+
+#video-modal > input[type=file] {
+    display: none;
+}
+
+#video-modal > #uploadVideoButton {
+    background-color: rgb(204, 255, 204);
+    font-size: 1.5rem;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 7px rgb(32, 73, 32);
+            box-shadow: 0 0 7px rgb(32, 73, 32);
+}
+
+#video-modal > input[type=email] {
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 1rem;
+}
+
+#video-modal > input:focus {
+    border-bottom: 2px solid green;
+}
+
+/* .fileDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileButton {
+    -webkit-box-shadow: 0 0 7px rgb(0, 0, 0);
+            box-shadow: 0 0 7px rgb(0, 0, 0);
+} */
+
+
+
+
+
+
+
+.video-confirm-btn {
+    background: rgb(160, 209, 255); 
+}
+
+.video-confirm-btn:hover {
+    background: rgb(84, 172, 255);
+}
+
+.video-cancel-btn {
+    background: rgb(255, 159, 176);
+}
+
+.video-cancel-btn:hover {
+    background: rgb(255, 114, 140);
+}

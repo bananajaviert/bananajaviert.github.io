@@ -1,0 +1,22 @@
+[
+    {
+        "type": "Design Basic Bundle",
+        "text": "High resolution and transparent design with a single concept blueprint and 3D mockup design. Includes 5 revisions and 1 day delivery time."
+    },
+    {
+        "type": "Design Standard Bundle",
+        "text": "High resolution and transparent design with a single concept blueprint and 3D mockup design. Also comes with the source file in all file formats. Includes unlimited revisions and 2 days delivery time."
+    },
+    {
+        "type": "Design Premium Bundle",
+        "text": "High resolution and transparent design with a single concept blueprint and 3D mockup design. Also comes with the source file in all file formats and stationary kits. Includes unlimited revisions and 3 days delivery time."
+    },
+    {
+        "type": "Video Standard Bundle",
+        "text": "A 3-5 minutes video duration that includes color correction, the titles, sound effects, and background music. Also comes with unlimited revisions and 1-2 days delivery time!"
+    },
+    {
+        "type": "Video Premium Bundle",
+        "text": "A 5-20 minutes video duration that includes the following: Color Correction, Titles, Sound Effects, Background Music, Color Grading, Green Screen, Sound Editing & Mixing. Also comes with unlimited revisions and 2-3 days delivery time!"
+    }
+]

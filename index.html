@@ -10,6 +10,8 @@
     <link rel="icon" href="/assets/white-logo.png">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>RDZV - Graphics Solution</title>
 </head>
@@ -40,6 +42,69 @@
                 </div>
             </div>
 
+            <div id="icons-div">
+                <div data-aos="zoom-in-up" class="icons">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Innovative and unique design blueprint and 3D mockups to choose from</p>
+                </div>
+
+                <div data-aos="zoom-in-up" class="icons">
+                    <i class="fas fa-theater-masks"></i>
+                    <p>User friendly designs and video editing. For work, school, and for fun!</p>
+                </div>
+
+                <div data-aos="zoom-in-up"  class="icons">
+                    <i class="fas fa-photo-video"></i>
+                    <p>Your ideas, our job to create exquisite design and solid video editing.</p>
+                </div>
+            </div>
+
+            <div id="why-us">
+                <h1>WHY US?</h1>
+                <br>
+                <h3>We have trained designers that you can trust. Try and be satisfied!</h3>
+                <div id="num-div-container">
+                    <div data-aos="fade-up" class="num-div" id="num-of-staffs">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>6</h3>
+                        <h4>Staffs</h4>
+                    </div>
+
+                    <div data-aos="fade-up" class="num-div" id="num-of-design-made">
+                        <i class="fas fa-print"></i>
+                        <h3>350+</h3>
+                        <h4>Designs</h4>
+                    </div>
+
+                    <div data-aos="fade-up" class="num-div" id="num-of-customers">
+                        <i class="fas fa-users"></i>
+                        <h3>230+</h3>
+                        <h4>Customers</h4>
+                    </div>
+                </div>
+                <a id="see-staffs" href="#staff-members-div">Click to see the staffs</a>
+            </div>
+
+            <div class="third-screen">
+                <h1>Below shows the demand of Graphics Design over the years</h1>
+                <p class="xData">X-axis represents the years from 2016-2021</p>
+                <p class="yData">Y-axis represents the of demand of graphics design</p>
+                <canvas class="charts" id="popularityChart" width="400" height="400"></canvas>
+            </div><!--moved from bottom-->
+
+            <div id="staff-members-div">
+                <h1>THE STAFFS</h1>
+                <div class="staff-members-div">
+                    <img class="staff-members" src="/assets/staffs/NACPIL_1.jpg" alt="Nacpil Staff">
+                    <img class="staff-members" src="/assets/staffs/JAVIERTO_1.jpg" alt="Javierto Staff">
+                    <img class="staff-members" src="/assets/staffs/MERALPIZ_1.jpg" alt="Meralpiz Staff">
+                    <img class="staff-members" src="/assets/staffs/PINEDA_1.jpg" alt="Pineda Staff">
+                    <img class="staff-members" src="/assets/staffs/MESINA_1.jpg" alt="Mesina Staff">
+                    <img class="staff-members" src="/assets/staffs/POLINTAN_1.jpg" alt="Polintan Staff">
+                    <img class="staff-members" src="/assets/staffs/NABUNG_1.jpg" alt="Nabung Staff">
+                </div>
+            </div>
+
             <div class="second-screen">
                 <div class="second-screen-txt">
                     <h2>ABOUT US</h2>
@@ -48,26 +113,21 @@
                 <img src="assets/white-logo.png" alt="White Company Logo">
             </div>
 
-            <div class="third-screen">
-                <h1>Below shows the demand of Graphics Design over the years</h1>
-                <p class="xData">X-axis represents the years from 2016-2021</p>
-                <p class="yData">Y-axis represents the of demand of graphics design</p>
-                <canvas class="charts" id="popularityChart" width="400" height="400"></canvas>
-            </div>
         </div><!--Home content wrapper-->
         
         <div class="contents" id="gallery-content">
             <div class="first-screen" id="design-gallery">
                 <h1>Graphic Designs</h1>
-                <div class="design-gallery-img">
+                <div class="design-gallery-img" id="design-gallery-img">
                     <img class="gallery-img" src="assets/gallery-samples/aespa.png" alt="Aespa Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/amour-cafe.png" alt="Izone Logo">
                     <img class="gallery-img" src="assets/gallery-samples/babasuk.png" alt="Babasuk Logo">
-                    <img class="gallery-img" src="assets/gallery-samples/izone.jpg" alt="Izone Logo" style="background: black;">
+                    <img class="gallery-img" src="assets/gallery-samples/izone.jpg" alt="Izone Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/hana-blooms-1.png" alt="Aespa Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/hana-blooms-2.png" alt="Babasuk Logo">
                     <img class="gallery-img" src="assets/gallery-samples/john-repair.png" alt="Motorcyle Repair Logo">
-                    <img class="gallery-img" src="assets/gallery-samples/aespa.png" alt="Aespa Logo">
-                    <img class="gallery-img" src="assets/gallery-samples/babasuk.png" alt="Babasuk Logo">
-                    <img class="gallery-img" src="assets/gallery-samples/izone.jpg" alt="Izone Logo" style="background: black;">
-                    <img class="gallery-img" src="assets/gallery-samples/john-repair.png" alt="Motorcyle Repair Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/atarashi-clothing.png" alt="Motorcyle Repair Logo">
+                    <img class="gallery-img" src="assets/gallery-samples/wild-sale.png" alt="Motorcyle Repair Logo">
                 </div>
             </div><!--design gallery img div-->
 
@@ -94,7 +154,7 @@
                 <section id="design-section">
                     <h1>Graphic Designs</h1>
                     <div class="services-div" id="basic-service">
-                        <img src="assets/service-logos/basic.png" alt="">
+                        <img src="assets/service-logos/basic.png" alt="Basic Bundle">
                         <div class="tag-n-price">
                             <h1>Basic Service</h1>
                             <h2>PHP 500</h2>
@@ -105,7 +165,7 @@
                         </div>
                     </div>
                     <div class="services-div" id="standard-service">
-                        <img src="assets/service-logos/standard.png" alt="">
+                        <img src="assets/service-logos/standard.png" alt="Standard Bundle">
                         <div class="tag-n-price">
                             <h1>Standard Service</h1>
                             <h2>PHP 1500</h2>
@@ -116,7 +176,7 @@
                         </div>
                     </div>
                     <div class="services-div" id="premium-service">
-                        <img src="assets/service-logos/premium.png" alt="">
+                        <img src="assets/service-logos/premium.png" alt="Premium Bundle">
                         <div class="tag-n-price">
                             <h1>Premium Service</h1>
                             <h2>PHP 2000</h2>
@@ -131,7 +191,7 @@
                 <section id="video-section">
                     <h1>Video Editing</h1>
                     <div class="services-div" id="standard-video-service">
-                        <img src="assets/service-logos/standard.png" alt="">
+                        <img src="assets/service-logos/standard.png" alt="Standard Bundle">
                         <div class="tag-n-price">
                             <h1>Standard Service</h1>
                             <h2>PHP 1000</h2>
@@ -142,7 +202,7 @@
                         </div>
                     </div>
                     <div class="services-div" id="premium-video-service">
-                        <img src="assets/service-logos/premium.png" alt="">
+                        <img src="assets/service-logos/premium.png" alt="Premium Bundle">
                         <div class="tag-n-price">
                             <h1>Premium Service</h1>
                             <h2>PHP 2500</h2>
@@ -152,6 +212,10 @@
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <section id="custom-section">
+                    
                 </section>
             </div>
             

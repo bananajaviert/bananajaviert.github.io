@@ -2,6 +2,8 @@ import { ContactSendMail as contactSend } from './email.js';
 
 contactSend();
 
+AOS.init();
+
 //sticky navigation bar
 window.onscroll = function() {myFunction()};
 
@@ -152,6 +154,30 @@ let popularityChart = new Chart(ctx, {
         }
     }
 });
+
+//lightbox for staff images
+//lightbox for gallery images
+const stafflightbox = document.createElement("div");
+stafflightbox.id = "stafflightbox";
+document.body.appendChild(stafflightbox);
+
+const staffimg = document.getElementsByClassName("staff-members")
+Array.prototype.forEach.call(staffimg,(image) => {
+  image.addEventListener('click', () => {
+    stafflightbox.classList.add("active")
+    const img = document.createElement("img")
+    img.src = image.src;
+    while(stafflightbox.firstChild) {
+      stafflightbox.removeChild(stafflightbox.firstChild)
+    }
+    stafflightbox.appendChild(img);
+  })
+})
+
+stafflightbox.addEventListener('click', e => {
+  if(e.target !== e.currentTarget) return
+  stafflightbox.classList.remove("active")
+})
 
 
 

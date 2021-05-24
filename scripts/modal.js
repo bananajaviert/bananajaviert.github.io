@@ -143,7 +143,6 @@ class OfferNodes {
   constructor() {
     
   }
-
   //create nodes and show
   showOffer(nodes) {
     const newP = document.createElement("p")
@@ -166,16 +165,19 @@ class OfferNodes {
       switch (offerType) {
       case 'designBasicNode':
         dataText = data[0].text
-        break;
+        break
       case 'designStandardNode':
         dataText = data[1].text
-        break;
+        break
       case 'designPremiumNode':
         dataText = data[2].text
+        break
       case 'videoStandardNode':
         dataText = data[3].text
+        break
       case 'videoPremiumNode':
-        dataText = data[3].text
+        dataText = data[4].text
+        break
     }
     return this.showOffer(document.createTextNode(JSON.stringify(dataText)))
     }).catch((error) => {

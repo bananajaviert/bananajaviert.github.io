@@ -136,6 +136,7 @@ const SendDesignRequest = (designParams) => {
           document.querySelector('#conceptDesign').value = '';
           document.querySelector('#designName').value = '';
           document.querySelector('#emailAddress').value = '';
+          document.body.style.overflow = "auto";
         }
         catch(error) {
           Swal.fire({

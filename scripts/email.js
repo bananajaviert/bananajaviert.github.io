@@ -6,47 +6,54 @@ import { modalBg } from './modal.js' //import variable
     emailjs.init('user_L0xnblIzS1MIW5JBeNlWr');
   })();
   
-const ContactSendMail = () => {
-  const sendMail = document.getElementById("sendMail");
+class EmailValues{
+  constructor() {
+    this.emailParams = {
+      myAccount: document.querySelector('#myAccount').value,
+      userAccount: document.querySelector('#userAccount').value,
+      message: document.querySelector('#message').value
+    }
+  }
+}
+const ContactSendMail = (paramsForm) => {
+  const emailVal = new EmailValues()
 
-  sendMail.addEventListener('click', (paramsForm) => {
-    paramsForm = {
-      my_account: document.getElementById("myAccount").value,
-      user_account: document.getElementById("userAccount").value,
-      message: document.getElementById("message").value
-    };
-  
-    emailjs.send("service_1qgy75e","template_2mgn3pj", paramsForm)
-      .then(() => {
-        Swal.fire({
-          title: 'Email sent!',
-          text: 'Thank you for reaching us.',
-          icon: 'success'
-        }).then((result) => {
-          if(result.isConfirmed) {
-            try{
-              document.getElementById("userAccount").value = '';
-              document.getElementById("message").value = '';
-              document.body.style.overflow = "auto";
-            }
-            catch(error) {
-              Swal.fire({
-                icon: `error`,
-                title: `Request failed: ${error}`
-              })
-              document.body.style.overflow = "auto";
-            }
+  paramsForm = {
+    my_account: emailVal.emailParams.myAccount,
+    user_account: emailVal.emailParams.userAccount,
+    message: emailVal.emailParams.message
+  };
+
+  emailjs.send("service_1qgy75e","template_2mgn3pj", paramsForm)
+    .then(() => {
+      Swal.fire({
+        title: 'Email sent!',
+        text: 'Thank you for reaching us.',
+        icon: 'success'
+      }).then((result) => {
+        if(result.isConfirmed) {
+          try{
+            document.getElementById("userAccount").value = '';
+            document.getElementById("message").value = '';
+            document.body.style.overflow = "auto";
           }
-        })
-      });
-  })
+          catch(error) {
+            Swal.fire({
+              icon: `error`,
+              title: `Request failed: ${error}`
+            })
+            document.body.style.overflow = "auto";
+          }
+        }
+      })
+    });
 }
 
 const SendVideoRequest = (videoParams) => {
   videoParams = {
     bundle: document.querySelector('#videoInput').value,
     user_account: document.querySelector('#videoEmailAddress').value,
-    my_account: `mrcnbng@gmail.com`
+    my_account: `rdzv.gs@gmail.com`
   };
 
   emailjs.send('service_video_request', 'bundle_template', videoParams)
@@ -74,7 +81,7 @@ const SendVideoRequest = (videoParams) => {
   })
 }
 
-class designRequest {
+class DesignRequest {
   constructor() {
     this.firstModalValues = {
       conceptDesign: document.querySelector('#conceptDesign').value,
@@ -102,13 +109,13 @@ class designRequest {
 }
 
 const SendDesignRequest = (designParams) => {
-  let design = new designRequest();//initiate new class
+  let design = new DesignRequest() //initiate new class
 
   designParams = {
     concept_design: design.firstModalValues.conceptDesign,
     design_name: design.firstModalValues.designName,
     user_account: design.firstModalValues.emailAddress,
-    my_account: `mrcnbng@gmail.com`,
+    my_account: `rdzv.gs@gmail.com`,
     
     tshirt_checkbox: design.secondModalValues.tshirt.checkbox,
     tshirt_quantity: design.secondModalValues.tshirt.quantity,
@@ -153,5 +160,5 @@ const SendDesignRequest = (designParams) => {
 
 
 
-export { designRequest }
+export { DesignRequest, EmailValues }
 export { ContactSendMail, SendDesignRequest, SendVideoRequest }// export functions

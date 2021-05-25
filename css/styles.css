@@ -245,7 +245,7 @@ header {
 #num-div-container > .num-div {
     padding: 1rem;
     margin: 1rem;
-    width: 350px;
+    width: 300px;
     font-size: 2rem;
     -webkit-box-shadow: 0 0 5px white;
             box-shadow: 0 0 5px white;
@@ -395,10 +395,14 @@ header {
     text-justify: inter-word;
 }
 
-#gallery-content > #design-gallery {
+#gallery-content > #design-gallery, #video-gallery {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     position: relative;
-    -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
-            box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+#gallery-content > #design-gallery {
+    border-bottom: 1px solid rgb(2, 0, 82);
 }
 
 #gallery-content > #design-gallery::after {
@@ -434,12 +438,11 @@ header {
 #gallery-content > #design-gallery > .design-gallery-img {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .gallery-img {
-    margin: 10px;
+    margin: 1rem;
     height: 200px;
     width: 300px;
     cursor: pointer;
@@ -474,12 +477,6 @@ header {
     padding: 4px;
     background-color: black;
     border: 2px solid gainsboro;
-}
-
-#gallery-content > #video-gallery {
-    position: relative;
-    -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
-            box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
 #gallery-content > #video-gallery::after {
@@ -667,29 +664,120 @@ header {
     letter-spacing: 1px;
 }
 
-.contact-form {
+#contact-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.contact-form {
+    border-top: 1px solid rgb(2, 0, 82);
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    margin: 3rem;
+    padding: 3rem;
+    padding-top: 5rem;
     text-align: center;
     font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.contact-form::after {
+    content: "";
+    background: url("/assets//contact\ bg.jpg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.contact-form > #contact-address {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-address > * {
+    padding: 1rem;
+}
+
+#contact-address > label {
+    background: -webkit-linear-gradient(rgb(2, 0, 82), rgb(13, 84, 117));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#contact-address > input {
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 1rem;
+}
+
+#contact-address > input:focus {
+    border-bottom: 2px solid green;
+}
+
+.contact-form > #contact-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-message > *{
+    padding: 1rem;
+    margin: 1rem;
+}
+
+#contact-message > label {
+    background: -webkit-linear-gradient(rgb(2, 0, 82), rgb(13, 84, 117));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+}
+
+#contact-message > textarea {
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 1rem;
+    max-width: 95%;
+    resize: none;
+    border-radius: 3pt;
+}
+
+#contact-message > button {
+    color: white;
+    width: fit-content;
+    background-image: linear-gradient(to right, rgb(2, 0, 82), rgb(30, 82, 149));
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 3px rgb(2, 0, 82);
+                box-shadow: 0 0 3px rgb(2, 0, 82);
+    transition: .2s all ease;
+}
+
+#contact-message > button:hover {
+    transform: scale(1.05);
 }
 
 .mapouter {
     padding: 2rem;
+    padding-bottom: 5rem;
     position:relative;
     display: flex;
     justify-content: space-between;
 }
 
-
-
 .gmap_canvas {
     overflow:hidden;
     width: 100%;
     height: auto;
+    border-radius: 5pt;
 }
 
 .mapouter > #map-details {
@@ -707,6 +795,16 @@ header {
     border: 1px solid rgb(2, 0, 82);
     padding: 1.5rem;
     border-radius: 3pt;
+    transition: .2s all ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+#map-details > .details:hover {
+    transform: scale(1.03);
 }
 
 

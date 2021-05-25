@@ -18,7 +18,7 @@
 <body>
     <header class="sticky" id="navigation-bar">
         <div class="logo-container">
-            <img width="70" src="assets/white-logo.png" alt="Logo">
+            <img width="70" src="assets/white-logo.png" alt="Logo" id="logo">
             <h3>RDZV - Graphics Solution</h3>
         </div>
         <ul class="button-list">
@@ -226,19 +226,24 @@
                     </iframe>
                 </div>
                 <div class="map-details" id="map-details">
-                    <h3 class="details">Address: <address>Dolores, San Fernando, Pampanga, Philippines</address></h3>
-                    <h3 class="details">Email address: <address>rdzv.graphics@gmail.com</address></h3>
+                    <h3 class="details" id="map-address">Address: <address>Dolores, San Fernando, Pampanga, Philippines</address></h3>
+                    <a href="#contact-form" class="details" id="contact-details">Email address: <address>rdzv.gs@gmail.com</address></a>
                 </div>
             </div>
 
-            <div class="contact-form">
-                <label for="toName">Send Email to:</label>
-                <input type="text" name="toName" id="myAccount" value="mrcnbng@gmail.com" readonly>
-                <label for="toName">Enter your Email address:</label>
-                <input type="text" name="fromName" id="userAccount">
-                <label for="toName">Your message:</label>
-                <input type="text" name="message" id="message">
-                <button id="sendMail">Send Email</button>
+            <div class="contact-form" id="contact-form">
+                <div id="contact-address">
+                    <label for="toName">Send Email to:</label>
+                    <input type="text" name="toName" id="myAccount" value="rdzv.gs@gmail.com" readonly>
+                    <label for="toName">Enter your Email address:</label>
+                    <input type="text" name="fromName" id="userAccount" placeholder="Enter your valid email address">
+                </div>
+
+                <div id="contact-message">
+                    <label for="toName">Your message:</label>
+                    <textarea name="message" id="message"cols="30" rows="10" maxlength="250" placeholder="Type your message here"> </textarea>
+                    <button id="sendMail">Send Email</button>
+                </div>
             </div>
         </div><!--Contact content wrapper-->
     </section><!--whole body wrapper-->

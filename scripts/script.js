@@ -1,6 +1,5 @@
 import { ContactSendMail as contactSend } from './email.js';
-
-contactSend();
+import { EmailValues } from './email.js';
 
 AOS.init();
 
@@ -19,15 +18,16 @@ function myFunction() {
   }
 }
 
-const  homebtn = document.getElementById("home-btn")
-const  gallerybtn = document.getElementById("gallery-btn")
-const  servicesbtn =document.getElementById("services-btn")
-const  contactbtn = document.getElementById("contact-btn")
+const homebtn = document.getElementById("home-btn")
+const gallerybtn = document.getElementById("gallery-btn")
+const servicesbtn =document.getElementById("services-btn")
+const contactbtn = document.getElementById("contact-btn")
+const logo = document.querySelector('#logo')
 
-const  home = document.getElementById("home-content")
-const  gallery = document.getElementById("gallery-content")
-const  services = document.getElementById("services-content")
-const  contact = document.getElementById("contact-content")
+const home = document.getElementById("home-content")
+const gallery = document.getElementById("gallery-content")
+const services = document.getElementById("services-content")
+const contact = document.getElementById("contact-content")
 
 const tabs = document.getElementById("tabs");
 
@@ -77,6 +77,13 @@ const defaultDisplay = home.style.display = "flex";
 if(defaultDisplay) {
   homebtn.classList.add("avoid-clicks");
 }
+
+logo.addEventListener('click', () => {
+  displayNone(true);
+  $("#home-content").fadeIn();
+  enableBtn();
+  homebtn.classList.add("avoid-clicks");
+})
 
 homebtn.addEventListener('click', () => {
   displayNone(true);
@@ -253,4 +260,39 @@ videoTab.addEventListener('click', () => {
   videoTab.style.background = "rgba(131, 131, 131, 0.801)";
   tabClickable();
   videoTab.classList.add("avoid-clicks");
+})
+
+
+const mapAddress = document.querySelector('#map-address')
+
+mapAddress.addEventListener('click', () => {
+  window.location.href = 'https://www.google.com/maps/place/Dolores,+San+Fernando,+Pampanga,+Philippines/@15.038852,120.684817,13z/data=!4m5!3m4!1s0x3396f7119e0221f3:0xdac0d652d8d51fe2!8m2!3d15.0389739!4d120.6808826?hl=en-US';
+})
+
+const sendMail = document.querySelector('#sendMail');
+
+sendMail.addEventListener('click', () => {
+  const email = new EmailValues();
+  
+  if(email.emailParams.userAccount.length == 0 || email.emailParams.message.length == 0) {
+    Swal.fire({
+      icon: `warning`,
+      title: `Empty input`,
+      text: `Please don't leave the textfield empty.`
+    })
+  } else {
+    const validateEmail = (email) => {
+      const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(String(email).toLowerCase());
+    }
+      if(!validateEmail(email.emailParams.userAccount)) {
+        Swal.fire({
+          icon: `warning`,
+          title: `Invalid Gmail address`,
+          text: `Please check your Gmail address`
+        })
+      } else {
+        contactSend()
+      }
+  }
 })

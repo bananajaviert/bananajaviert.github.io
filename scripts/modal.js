@@ -1,6 +1,6 @@
 import { SendVideoRequest as sendVideoRequest } from './email.js' //import send video function
 import { SendDesignRequest as sendDesignRequest } from './email.js' //import send design function
-import { designRequest } from './email.js' //import design request class
+import { DesignRequest } from './email.js' //import design request class
 
 
 const basicOfferBtn = document.querySelector("#basic-offer-button")
@@ -208,7 +208,7 @@ premiumOfferBtn.addEventListener('click', (designNode) => {
 const designConfirm = document.querySelector('#finish-btn')
 
 designConfirm.addEventListener('click', () => {
-  let request = new designRequest();
+  let request = new DesignRequest();
   //check if checkboxes are on
   if(tshirtCheckbox.checked == false || cardCheckbox.checked == false || stickerCheckbox.checked == false) {
     sendDesignRequest();

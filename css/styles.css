@@ -114,14 +114,12 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
-    border-bottom: 2px solid rgb(0, 1, 56);
 }
 
 #home-content > .first-screen::after {
     content: "";
-    background: url("/assets/first-bg.jpg");
+    background: url("/assets/home\ bg.jpg");
     background-size: cover;
-    opacity: 0.2;
     top: 0;
     left: 0;
     bottom: 0;
@@ -131,18 +129,32 @@ header {
 }
 
 #home-content > .first-screen > img {
-    width: 600px;
+    width: 550px;
     flex: 1;
+    padding-bottom: 3rem;
 }
 
 #home-content > .first-screen > .first-screen-txt {
     flex: 2;
     font-size: 2em;
-    padding: 2em;
+    padding: 1rem;
 }
 
-#home-content > .first-screen > .first-screen-txt > h2 {
+#home-content > .first-screen > .first-screen-txt {
     font-weight: 900;
+    font-weight: 900;
+    letter-spacing: 2pt;
+}
+
+.first-screen-txt > h3 {
+    font-size: 2.8rem;
+}
+
+#home-boxed-text {
+    color: white;
+    margin: 1rem;
+    padding: .5rem;
+    background-image: linear-gradient(to right, rgb(0, 1, 56), rgb(51, 87, 170));
 }
 
 #home-content > .second-screen {
@@ -195,8 +207,9 @@ header {
     align-items: center;
     padding: 3rem;
     margin: 3rem;
-    -webkit-box-shadow: 0 0 10px rgb(7, 0, 68);
-            box-shadow: 0 0 10px rgb(7, 0, 68);
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(221, 221, 221));
+    -webkit-box-shadow: 0 0 5px rgb(7, 0, 68);
+            box-shadow: 0 0 5px rgb(7, 0, 68);
 }
 
 .icons > .fas {
@@ -230,7 +243,7 @@ header {
 }
 
 #num-div-container > .num-div {
-    padding: 2.5rem;
+    padding: 1rem;
     margin: 1rem;
     width: 350px;
     font-size: 2rem;
@@ -283,7 +296,6 @@ header {
     padding: 1%;
     text-align: center;
     text-indent: 0;
-    border-bottom: 3px solid rgb(2, 0, 82);
 }
 
 #home-content > .third-screen > h1 {
@@ -304,17 +316,32 @@ header {
 }
 
 #staff-members-div {
-    padding: 3rem;
+    position: relative;
+    padding-top: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+#staff-members-div::after {
+    content: "";
+    background: url("/assets/staffs/BACKGROUND.jpg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
 #staff-members-div > h1 {
     font-size: 2.5rem;
     font-weight: 900;
-    color: rgb(2, 0, 82);
+    color: white;
 }
 
 .staff-members-div {
@@ -328,11 +355,12 @@ header {
     height: 30%;
     margin: 3rem;
     cursor: pointer;
+    border-radius: 3pt;
     transition: .2s all ease;
 }
 
 .staff-members:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 #stafflightbox {
@@ -368,18 +396,39 @@ header {
 }
 
 #gallery-content > #design-gallery {
-    padding: 2em;
+    position: relative;
     -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
             box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
+#gallery-content > #design-gallery::after {
+    content: "";
+    background: url("/assets/GALLERY\ TEMP2.jpg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
 #gallery-content > #design-gallery > h1 {
-    margin: 1.5em;
-    padding: .5em;
-    text-align: center;
-    font-size: 2em;
-    -webkit-box-shadow: 0 5px 7px 3px gray;
-            box-shadow: 0 5px 7px 3px gray;
+    margin: 1.5rem;
+    margin-left: 0;
+    padding: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 5pt;
+    font-weight: 900;
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    border-radius: .4rem 2rem 2rem .4rem;
+    -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+    background: -webkit-linear-gradient(rgb(2, 0, 82), rgb(13, 84, 117));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 }
 
 #gallery-content > #design-gallery > .design-gallery-img {
@@ -396,6 +445,11 @@ header {
     cursor: pointer;
     -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
             box-shadow: 0 0 10px rgb(0, 0, 0);
+    transition: .2s all ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
 }
 
 #lightbox {
@@ -422,20 +476,39 @@ header {
     border: 2px solid gainsboro;
 }
 
-#video-gallery {
-    padding: 2em;
+#gallery-content > #video-gallery {
+    position: relative;
     -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
             box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
+#gallery-content > #video-gallery::after {
+    content: "";
+    background: url("/assets/GALLERY\ TEMP2.jpg");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
 #video-gallery > h1 {
-    margin: 1.5em;
-    padding: .5em;
-    text-align: center;
-    font-size: 2em;
-    width: auto;
-    -webkit-box-shadow: 0 5px 7px 3px gray;
-            box-shadow: 0 5px 7px 3px gray;
+    margin: 1.5rem;
+    margin-left: 0;
+    padding: 1rem;
+    font-size: 2.5rem;
+    letter-spacing: 5pt;
+    font-weight: 900;
+    width: fit-content;
+    font-family: 'Raleway', sans-serif;
+    border-radius: .4rem 2rem 2rem .4rem;
+    -webkit-box-shadow: 0 0 5px rgb(0, 0, 0);
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+    background: -webkit-linear-gradient(rgb(2, 0, 82), rgb(13, 84, 117));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 }
 
 #video-gallery > .videos {
@@ -452,6 +525,11 @@ header {
     cursor: pointer;
     -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
             box-shadow: 0 0 10px rgb(0, 0, 0);
+    transition: .2s all ease;
+}
+
+#video-gallery > .videos > iframe:hover {
+    transform: scale(1.02);
 }
 
 /*end of gallery styling*/
@@ -465,7 +543,6 @@ header {
 #services-content > #services-tabs{
     padding: .5em;
     flex: .7    ;
-    position: relative;
     -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
             box-shadow: 0 0 10px rgb(0, 0, 0);
     color: rgb(2, 0, 82);
@@ -481,7 +558,6 @@ header {
 }
 
 #tabs {
-    position: fixed;
     display: flex;
     padding: 3rem;
     flex-direction: column;
@@ -558,18 +634,22 @@ header {
     height: 60px;
     margin: 2em;
     padding: 1em;
-    background: white;
     font-weight: 900;
     font-size: 70%;
     border: none;
-    box-shadow: 1px 1px 1px 3px gainsboro;
+    background: none;
+    -webkit-box-shadow: 0 0 5px white;
+            box-shadow: 0 0 5px white;
     cursor: pointer;
+    color: white;
     transition: .2s all ease;
 }
 
 .service-btns:hover {
-    background-color: rgb(177, 177, 177);
-    box-shadow: 1px 1px 1px 3px rgb(177, 177, 177);
+    color: black;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 7px black;
+            box-shadow: 0 0 7px black;
 }
 
 
@@ -597,6 +677,38 @@ header {
     font-size: 1.5rem;
 }
 
+.mapouter {
+    padding: 2rem;
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.gmap_canvas {
+    overflow:hidden;
+    width: 100%;
+    height: auto;
+}
+
+.mapouter > #map-details {
+    width: 100%;
+}
+
+#map-details > *{
+    margin: 1rem;
+}
+
+#map-details > .details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid rgb(2, 0, 82);
+    padding: 1.5rem;
+    border-radius: 3pt;
+}
+
 
 @media only screen and (max-width: 1024px) {
 
@@ -609,11 +721,16 @@ header {
     }
 
     #home-content > .first-screen::after {
-        left: -200px;
+        left: -700px;
      }
 
     #home-content > .first-screen > img {
         width: 400px;
+    }
+
+    .first-screen-txt > * {
+        font-size: 80%;
+        margin: 1rem;
     }
 
     #home-content > .second-screen {
@@ -638,6 +755,11 @@ header {
         margin: 3rem;
         cursor: pointer;
         transition: .2s all ease;
+    }
+
+    
+    #gallery-content > #design-gallery > h1 {
+        font-size: 2.5rem;
     }
 
     #video-gallery > .videos > iframe {
@@ -683,5 +805,9 @@ header {
 
     .tag-n-price {
         padding: 1em;
+    }
+
+    .mapouter {
+        flex-direction: column;
     }
 }

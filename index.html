@@ -153,7 +153,7 @@
             </div>
             <div class="display-services">
                 <section id="design-section">
-                    <h1>Graphic Designs</h1>
+                    <h1>Graphics Designs</h1>
                     <div class="services-div" id="basic-service">
                         <img src="assets/service-logos/basic.png" alt="Basic Bundle">
                         <div class="tag-n-price">
@@ -216,7 +216,37 @@
                 </section>
 
                 <section id="custom-section">
-                    
+                    <h1>Custom Request</h1>
+
+                    <div class="custom-div" id="custom-input">
+                        <div class="custom-input-div" id="custom-img-div">
+                            <label for="custom-img">Upload Photo</label>
+                            <button id="custom-img-button">Upload Photo</button>
+                            <input type="file" name="custom-img" id="custom-img" accept="image/png, image/gif, image/jpeg">
+                        </div>
+
+                        <h2>And/Or</h2><!--USE AND OPERATOR TO CHECK AT LEAST ONE HAS VALUE!!!-->
+
+                        <div class="custom-input-div" id="custom-video-div">
+                            <label for="custom-video">Upload Video</label>
+                            <button id="custom-video-button">Upload Video</button>
+                            <input type="file" name="custom-video" id="custom-video" accept="video/mp4,video/x-m4v,video/*">
+                        </div>
+                    </div>
+
+                    <div class="custom-div" id="preview-div">
+                        <h1>Preview Image</h1>
+                        <img id="preview-img"/>
+                    </div>
+
+                    <div class="custom-div" id="custom-remarks">
+                        <label for="remarks">Add message or remarks</label>
+                        <textarea name="remarks" id="remarks" cols="30" rows="10" maxlength="500" placeholder="Ex. The design should be upside down"></textarea>
+
+                        <label for="custom-email">Gmail Address</label>
+                        <input type="email" name="custom-email" id="custom-email">
+                        <button id="custom-submit">Submit</button>
+                    </div>
                 </section>
             </div>
             
@@ -232,7 +262,7 @@
                         loading="lazy"
                         allowfullscreen
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDPapQkW1bVKHm1fDbzmiV0__gqxWsYadY
-                            &q=Space+Needle,Seattle+WA">
+                            &q=Dolores,+San+Fernando,+Pampanga">
                     </iframe>
                 </div>
                 <div class="map-details" id="map-details">

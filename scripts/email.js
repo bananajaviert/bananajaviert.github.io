@@ -56,7 +56,7 @@ const SendVideoRequest = (videoParams) => {
     my_account: `rdzv.gs@gmail.com`
   };
 
-  emailjs.send('service_video_request', 'bundle_template', videoParams)
+  emailjs.send('bundle_request', 'bundle_template', videoParams)
   .then(() => {
     Swal.fire({
       icon: `success`,
@@ -127,7 +127,7 @@ const SendDesignRequest = (designParams) => {
     sticker_quantity: design.secondModalValues.sticker.quantity
   };
 
-  emailjs.send('service_video_request', 'bundle_template', designParams)
+  emailjs.send('bundle_request', 'bundle_template', designParams)
   .then(() => {
     Swal.fire({
       icon: `success`,
@@ -156,9 +156,61 @@ const SendDesignRequest = (designParams) => {
   })
 }
 
+class Custom {
+  constructor() {
+    this.files = {
+      imgValue: document.querySelector('#custom-img').value,
+      videoValue: document.querySelector('#custom-video').value
+    }
+    this.details = {
+      remarks: document.querySelector('#remarks').value,
+      email: document.querySelector('#custom-email').value
+    }
+  }
+}
+
+const sendCustomRequest = (customParams) => {
+  let custom = new Custom()//for accessing Cusom class constructors
+
+  customParams = {
+    concept_design: custom.files.imgValue,
+    design_name: custom.files.videoValue,
+    
+    remarks: custom.details.remarks,
+    user_account: custom.details.email,
+    my_account: `rdzv.gs@gmail.com`
+  };
+
+  emailjs.send('bundle_request', 'bundle_template', customParams)
+  .then(() => {
+    Swal.fire({
+      icon: `success`,
+      title: `Request sent!`,
+      text: `We've received your request. Please check your gmail. If you can't see the mail, kindly check spam mails. Thank you!`
+    })
+    .then((result) => {
+      if(result.isConfirmed) {
+        try {
+          document.querySelector('#custom-img').value = ''
+          document.querySelector('#custom-video').value = ''
+          document.querySelector('#remarks').value = ''
+          document.querySelector('#custom-email').value = ''
+          document.querySelector('#preview-img').src = ''
+          document.body.style.overflow = 'auto'
+        }
+        catch(error) {
+          Swal.fire({
+            icon: `warning`,
+            title: `Request failed: ${error}`
+          })
+        }
+      }
+    })
+  })
+}
 
 
 
 
-export { DesignRequest, EmailValues }
-export { ContactSendMail, SendDesignRequest, SendVideoRequest }// export functions
+export { DesignRequest, EmailValues, Custom }
+export { ContactSendMail, SendDesignRequest, SendVideoRequest, sendCustomRequest}// export functions

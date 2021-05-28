@@ -1,5 +1,7 @@
 import { SendVideoRequest as sendVideoRequest } from './email.js' //import send video function
 import { SendDesignRequest as sendDesignRequest } from './email.js' //import send design function
+import { sendCustomRequest } from './email.js'
+import { Custom } from './email.js'
 import { DesignRequest } from './email.js' //import design request class
 
 
@@ -326,6 +328,11 @@ function removeClick() {
 const removeValues = () => {
   document.querySelector('#videoEmailAddress').value = '';
   videoInput.value = '';
+  document.querySelector('#custom-img').value = ''
+  document.querySelector('#custom-video').value = ''
+  document.querySelector('#remarks').value = ''
+  document.querySelector('#custom-email').value = ''
+  output.src = ''
 }
 
 const videoCancelAll = () => {
@@ -368,6 +375,68 @@ videoCancelBtn.addEventListener('click', () => {
 
 videoInput.addEventListener('change', () => {
   document.querySelector('#noVid').innerHTML = 'Uploaded 1 file';
+})
+
+
+//custom section
+const uploadedCustomImg = document.querySelector('#custom-img')
+
+const customImgButton = document.querySelector('#custom-img-button')
+customImgButton.addEventListener('click', () => {
+  uploadedCustomImg.click()
+})
+const output = document.querySelector('#preview-img');
+
+uploadedCustomImg.addEventListener('change', e => {
+    output.src = URL.createObjectURL(e.target.files[0]);
+    output.onload = () => {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+})
+
+const uploadedCustomVideo = document.querySelector('#custom-video')
+const customVideoButton = document.querySelector('#custom-video-button')
+
+customVideoButton.addEventListener('click', () => {
+  uploadedCustomVideo.click()
+})
+
+
+const customSubmit = document.querySelector('#custom-submit')
+
+customSubmit.addEventListener('click', (emailInput) => {
+  let custom = new Custom()
+  if(custom.files.imgValue.length === 0 && custom.files.videoValue.length === 0){
+    Swal.fire({
+      icon: `warning`,
+      title: `Empty file`,
+      text: `Please upload a video before submitting.`
+    })
+  } else {
+    emailInput = document.querySelector('#custom-email').value;
+    if(emailInput == null || emailInput.length == '') {
+    Swal.fire({
+      icon: `warning`,
+      title: `Enter Gmail address`,
+      text: `Please enter valid Gmail address`
+    })
+  } else {
+    const validateEmail = (email) => {
+      const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(String(email).toLowerCase());
+    }
+      if(!validateEmail(emailInput)) {
+        Swal.fire({
+          icon: `warning`,
+          title: `Invalid Gmail address`,
+          text: `Please check your Gmail address`
+        })
+      } else {
+        //email send form
+        sendCustomRequest()
+      }
+    }
+  }
 })
 
 

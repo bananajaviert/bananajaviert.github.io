@@ -443,7 +443,8 @@ header {
 
 .gallery-img {
     margin: 1rem;
-    width: 23rem;
+    width: 20rem;
+    height: 13rem;
     cursor: pointer;
     -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
             box-shadow: 0 0 10px rgb(0, 0, 0);
@@ -589,6 +590,97 @@ header {
     font-weight: 900;
     margin: 1em;
 }
+
+#custom-section > h1 {
+    text-align: center;
+    font-size: 200%;
+    font-weight: 900;
+    margin: 1em;
+}
+
+#custom-section > .custom-div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    -webkit-box-shadow: 0 0 5px rgb(2, 0, 82);
+            box-shadow: 0 0 5px rgb(2, 0, 82);
+}
+
+.custom-div > * {
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+#custom-remarks > textarea {
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .3pt;
+    font-weight: 500;
+}
+
+#custom-remarks > button {
+    background: none;
+    width: fit-content;
+    border: 2px solid green;
+    align-self: flex-end;
+    transition: .2s all ease;
+    cursor: pointer;
+}
+
+#custom-remarks > button:hover {
+    transform: scale(1.05);
+}
+
+#preview-div {
+    flex-direction: column;
+    align-items: center;
+}
+
+#preview-img {
+    height: auto;
+    width: 20rem;
+}
+
+.custom-input-div {
+    display: flex;
+}
+
+.custom-div > .custom-input-div > input {
+    display: none;
+}
+
+.custom-input-div > button {
+    background: none;
+    border: 2px solid green;
+    transition: .2s all ease;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.custom-input-div > button:hover {
+    transform: scale(1.05);
+    background: rgba(220, 220, 220, 0.541);
+}
+
+#custom-email {
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: 0;
+    font-size: 1rem;
+}
+
+#custom-email:focus {
+    border-bottom: 2px solid green;
+}
+
+
 
 .services-div {
     display: flex;
@@ -776,7 +868,6 @@ header {
     overflow:hidden;
     width: 100%;
     height: auto;
-    border-radius: 5pt;
 }
 
 .mapouter > #map-details {
@@ -884,12 +975,6 @@ header {
         left: 0;
     }
     
-    #design-section > h1 {
-        text-align: center;
-        font-size: 200%;
-        font-weight: 900;
-        margin: 0;
-    }
 
     .services-div {
         margin-top: 5em;
@@ -905,6 +990,10 @@ header {
     }
 
     .mapouter {
+        flex-direction: column;
+    }
+
+    .custom-input-div {
         flex-direction: column;
     }
 }

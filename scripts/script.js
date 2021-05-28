@@ -1,5 +1,6 @@
 import { ContactSendMail as contactSend } from './email.js';
 import { EmailValues } from './email.js';
+import { removeValues } from './modal.js';
 
 AOS.init();
 
@@ -29,7 +30,7 @@ const gallery = document.getElementById("gallery-content")
 const services = document.getElementById("services-content")
 const contact = document.getElementById("contact-content")
 
-const tabs = document.getElementById("tabs");
+const tabs = document.querySelector("#tabs");
 
 const tabDisplay = () => {
   if($(window).width() > 1024) {
@@ -67,8 +68,9 @@ function enableBtn() {
 
 function tabClickable() {
   //service tabs
-  designTab.classList.remove("avoid-clicks");
-  videoTab.classList.remove("avoid-clicks");
+  designTab.classList.remove('avoid-clicks');
+  videoTab.classList.remove('avoid-clicks');
+  customTab.classList.remove('avoid-clicks');
 }
 
 displayNone(false);
@@ -83,6 +85,7 @@ logo.addEventListener('click', () => {
   $("#home-content").fadeIn();
   enableBtn();
   homebtn.classList.add("avoid-clicks");
+  removeValues()
 })
 
 homebtn.addEventListener('click', () => {
@@ -109,6 +112,7 @@ servicesbtn.addEventListener('click', () => {
 
   tabDecoration();
   tabClickable();
+  removeValues()
 })
 
 contactbtn.addEventListener('click', () => {
@@ -216,23 +220,26 @@ $("#hamburger").click(() => {
 });
 
 //tab buttons
-const designTab = document.querySelector('#designTab');
-const videoTab = document.querySelector('#videoTab');
-const customTab = document.querySelector('#customTab');
+const designTab = document.querySelector('#designTab')
+const videoTab = document.querySelector('#videoTab')
+const customTab = document.querySelector('#customTab')
 
 //section displays
-const designSection = document.querySelector('#design-section');
-const videoSection = document.querySelector('#video-section');
+const designSection = document.querySelector('#design-section')
+const videoSection = document.querySelector('#video-section')
+const customSection = document.querySelector('#custom-section')
 
 const noSection = () => {
-  designSection.style.display = "none";
-  videoSection.style.display = "none";
+  designSection.style.display = 'none';
+  videoSection.style.display = 'none';
+  customSection.style.display = 'none';
 }
 
 
 const tabDecoration = () => {
-  designTab.style.background = "none";
-  videoTab.style.background = "none";
+  designTab.style.background = 'none';
+  videoTab.style.background = 'none';
+  customTab.style.background = 'none';
 }
 
 
@@ -255,12 +262,28 @@ designTab.addEventListener('click', () => {
 videoTab.addEventListener('click', () => {
   noSection();
   videoSection.style.display = "block";
+
   tabDisplay();
+
   tabDecoration();
   videoTab.style.background = "rgba(131, 131, 131, 0.801)";
   tabClickable();
   videoTab.classList.add("avoid-clicks");
 })
+
+customTab.addEventListener('click', () => {
+  noSection()
+  customSection.style.display = 'block';
+
+  tabDisplay();// tab display on window width
+
+  tabDecoration();//tab background
+  customTab.style.background = "rgba(131, 131, 131, 0.801)";
+  tabClickable();
+  customTab.classList.add("avoid-clicks");
+  removeValues()
+})
+
 
 
 const mapAddress = document.querySelector('#map-address')
@@ -296,3 +319,6 @@ sendMail.addEventListener('click', () => {
       }
   }
 })
+
+
+

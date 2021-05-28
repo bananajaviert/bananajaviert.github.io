@@ -142,18 +142,6 @@
     width: 100%;
 }
 
-#subOffer-modal > .total-cost-div {
-    display: flex;
-    align-items: flex-start;
-    padding: 1rem;
-    color: green;
-    border-top: 1px solid black;
-}
-
-.total-cost-div > h3 {
-    flex: 1;
-}
-
 /*video modal styling*/
 
 #video-modal.active {
